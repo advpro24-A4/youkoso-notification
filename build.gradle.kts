@@ -1,11 +1,12 @@
 plugins {
     java
+    jacoco
     id("org.springframework.boot") version "3.3.0"
     id("io.spring.dependency-management") version "1.1.5"
 }
 
 group = "id.ac.ui.cs.advprog"
-version = "0.0.1-SNAPSHOT"
+version = "1.0.0-SNAPSHOT"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_21
@@ -38,6 +39,12 @@ dependencies {
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
+jacoco{
+    toolVersion = "0.8.12"
+}
+
 tasks.withType<Test> {
     useJUnitPlatform()
+    finalizedBy("jacocoTestReport") // Generate the report after tests run
 }
+
