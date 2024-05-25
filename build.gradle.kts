@@ -47,6 +47,10 @@ jacoco{
 sonarqube {
     properties {
         property("sonar.exclusions", "resources/db/migration/**")
+        property("sonar.projectKey", "advpro24-A4_youkoso-notification")
+        property ("sonar.organization", "advpro24-a4")
+        property( "sonar.host.url", "https://sonarcloud.io")
+
     }
 }
 
