@@ -44,6 +44,12 @@ jacoco{
     toolVersion = "0.8.12"
 }
 
+sonarqube {
+    properties {
+        property("sonar.exclusions", "resources/db/migration/**")
+    }
+}
+
 tasks.withType<Test> {
     useJUnitPlatform()
     finalizedBy("jacocoTestReport") // Generate the report after tests run
