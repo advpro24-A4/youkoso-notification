@@ -1,5 +1,6 @@
 package id.ac.ui.cs.advprog.youkosonotification.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import id.ac.ui.cs.advprog.youkosonotification.model.enumaration.NotificationType;
 import lombok.Getter;
 import lombok.Setter;
@@ -9,9 +10,18 @@ import lombok.Setter;
 public class NotificationDTO {
     private String message;
     private NotificationType type;
-    private String user_id;
-    private String product_id;
-    private String order_id;
-    private String payment_id;
-    private String shipment_id;
+    @JsonProperty("user_id")
+    private String userId;
+
+    @JsonProperty("product_id")
+    private String productId;
+
+    @JsonProperty("order_id")
+    private String orderId;
+
+    @JsonProperty("payment_id")
+    private String paymentId;
+
+    @JsonProperty("shipment_id")
+    private String shipmentId;
 }

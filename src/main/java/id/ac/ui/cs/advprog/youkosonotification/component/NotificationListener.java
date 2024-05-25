@@ -29,23 +29,23 @@ public class NotificationListener {
         switch (incomingNotification.getType()){
             case NotificationType.ORDER -> notification = notificationFactory.createOrderNotification(
                     incomingNotification.getMessage(),
-                    incomingNotification.getUser_id(),
-                    incomingNotification.getOrder_id()
+                    incomingNotification.getUserId(),
+                    incomingNotification.getOrderId()
             );
             case NotificationType.PAYMENT -> notification = notificationFactory.createPaymentNotification(
                     incomingNotification.getMessage(),
-                    incomingNotification.getUser_id(),
-                    incomingNotification.getPayment_id()
+                    incomingNotification.getUserId(),
+                    incomingNotification.getPaymentId()
             );
             case NotificationType.PRODUCT -> notification = notificationFactory.createProductNotification(
                     incomingNotification.getMessage(),
-                    incomingNotification.getUser_id(),
-                    incomingNotification.getProduct_id()
+                    incomingNotification.getUserId(),
+                    incomingNotification.getProductId()
             );
             case NotificationType.SHIPMENT -> notification = notificationFactory.createShipmentNotification(
                     incomingNotification.getMessage(),
-                    incomingNotification.getUser_id(),
-                    incomingNotification.getShipment_id()
+                    incomingNotification.getUserId(),
+                    incomingNotification.getShipmentId()
             );
         }
         notificationService.createNotification(notification);
