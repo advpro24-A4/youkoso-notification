@@ -1,0 +1,14 @@
+build/
+.gradle/
+gradlew
+gradlew.bat
+.DS_Store
+*.iml
+*.ipr
+*.iws
+.idea/
+
+*.log
+*.tmp
+
+.dockerignore
