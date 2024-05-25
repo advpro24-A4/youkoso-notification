@@ -32,6 +32,21 @@ public class Notification {
     @Enumerated(EnumType.STRING)
     private NotificationStatus status;
 
+    @Column(name = "user_id",nullable = false)
+    private String  userId;
+
+    @Column(name ="product_id")
+    private String productId;
+
+    @Column(name = "order_id")
+    private String orderId;
+
+    @Column(name = "payment_id")
+    private String paymentId;
+
+    @Column(name = "shipment_id")
+    private String shipmentId;
+
     @Column(name = "created_at",nullable = false, updatable = false)
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
     @CreationTimestamp
