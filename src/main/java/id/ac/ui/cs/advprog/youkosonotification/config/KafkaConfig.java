@@ -43,8 +43,7 @@ public class KafkaConfig {
         props.put("sasl.jaas.config", saslJaasConfig);
 
         props.put(ErrorHandlingDeserializer.VALUE_DESERIALIZER_CLASS, JsonDeserializer.class.getName());
-        props.put(JsonDeserializer.TRUSTED_PACKAGES, "id.ac.ui.cs.advprog.youkosonotification.dto");
-
+        props.put(JsonDeserializer.TRUSTED_PACKAGES, "id.ac.ui.cs.advprog.youkosonotification.dto,id.ac.ui.cs.advprog.youkosoproduct.dto");
         return new DefaultKafkaConsumerFactory<>(
                 props,
                 new StringDeserializer(),
